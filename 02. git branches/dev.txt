@@ -2,5 +2,6 @@ hello git branches
 updated dev branch
 new line
 !!!
+NEW CODE INSERTED!
 elnur's code updated version 2
 eldar's code updated version 2
