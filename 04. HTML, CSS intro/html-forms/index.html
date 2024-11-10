@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML forms</title>
+</head>
+
+<body>
+    <form id="add-form">
+        <input id="pass" type="password">
+        <button id="btn" type="button">show password</button>
+
+        <br> <br>
+        <label for="name">Enter name: </label>
+        <input id="name" type="text" name="name" placeholder="enter name" maxlength="20" minlength="3" required>
+        <br>
+        <label for="email">Enter email: </label>
+        <input id="email" type="email" placeholder="enter email" name="email" required>
+        <br>
+        <label for="age">Enter age: </label>
+        <input id="age" type="number" placeholder="enter age" max="100" min="0" step="1" name="age" required>
+        <br>
+        <input type="date" placeholder="enter birth year">
+        <input type="datetime-local" placeholder="enter birth year">
+        <input type="color">
+        <br>
+        <hr>
+        <label for="accept-terms-of-use">Accept terms of use? </label>
+        <input type="checkbox" id="accept-terms-of-use">
+        <hr>
+        <label for="male">male</label>
+        <input type="radio" name="gender" id="male">
+        <label for="female">female</label>
+        <input type="radio" name="gender" id="female">
+        <label for="female">other</label>
+        <input type="radio" name="gender" id="other">
+
+        <input form="add-form" type="file" accept="image/png">
+        <hr>
+        <input type="range" min="0" max="1000" step="10">
+
+        <hr>
+        <select title="country" name="country" id="country">
+            <option disabled value="az">Azerbaijan</option>
+            <option value="tr">Turkey</option>
+            <option selected value="ne">Netherland</option>
+            <option value="de">Deutschland</option>
+            <option value="ru">Russia</option>
+        </select>
+
+        <hr>
+        <label for="message">Share Message: </label>
+        <textarea rows="10" cols="50" name="message" id="message"></textarea>
+
+        <hr>
+        <fieldset>
+            <legend>Personalia:</legend>
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname"><br><br>
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="birthday">Birthday:</label>
+            <input type="date" id="birthday" name="birthday"><br><br>
+            <input type="submit" value="Submit">
+        </fieldset>
+
+
+        <button type="submit">add</button>
+        <button disabled type="reset">cancel</button>
+    </form>
+
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

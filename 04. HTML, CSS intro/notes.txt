@@ -1,0 +1,12 @@
+Basics of HTML and its role in web development.
+Creating tables and working with form elements, 
+CSS Intro
+
+-------------
+comment shortcut -ctrl+k+c
+uncomment shortcut -ctrl+k+u
+format - alt+shift+f
+---------------------
+doc, html:5, !
+---------------------
+html tags (elements), html tag contents, html attributes
