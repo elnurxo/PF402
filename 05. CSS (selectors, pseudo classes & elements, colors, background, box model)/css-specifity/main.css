@@ -1,0 +1,7 @@
+* {
+    color: red;
+}
+
+div+span.content > ul li#active{
+    background-color: red;
+}

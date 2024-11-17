@@ -1,0 +1,27 @@
+/* css colors - color name, rgb - red green blue, rgbA (alpha), hex code, hsl, hsla */
+
+h1{
+    color: hotpink;
+}
+p{
+    color: tomato;
+}
+ul li{
+    font-size: 50px;
+}
+
+ul li:first-child{
+    color: rgb(256, 100, 150);
+}
+ul li:nth-child(2){
+    color: rgba(20, 177, 109, 0.508);
+}
+ul li:nth-child(3){
+    color: #E50914;
+}
+ul li:nth-child(4){
+    color: hsl(46, 70%, 50%);
+}
+ul li:nth-child(5){
+    color: hsla(46, 70%, 50%, 0.2);
+}

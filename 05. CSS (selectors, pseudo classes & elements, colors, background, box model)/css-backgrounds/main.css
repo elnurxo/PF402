@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 200vh;
+}
+
+#poster {
+    width: 80%;
+    height: 650px;
+    border: 1px solid lightgray;
+    margin: 30px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: .5s linear;
+    /* background-image: url("https://c4.wallpaperflare.com/wallpaper/690/285/233/5bd08042c789d-wallpaper-preview.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; */
+}
+
+#poster:hover {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+#poster:hover>img {
+    filter: brightness(100%);
+    scale: 1.1;
+}
+
+#poster>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    filter: brightness(10%);
+    transition: .5s linear;
+}
+
+.ig-profile {
+    width: 200px;
+    height: 200px;
+    margin: 14px auto;
+    border-radius: 50%;
+    background-image: url("https://i5.walmartimages.com/seo/Disney-Cinderella-Poster-Princess-New-24x36_41b43ee7-1fd4-40bb-bc09-8bd1e9e25d77.b9c210b537e09d73d03876272706e40a.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

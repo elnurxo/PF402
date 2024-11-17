@@ -1,0 +1,19 @@
+h1,
+span {
+    border: 1px solid red;
+}
+
+h1 {
+    display: block;
+    width: 320px;
+}
+
+span {
+    /* display: none; */
+    /* opacity: 0;
+    visibility: hidden; */
+    width: 150px;
+    margin-top: 150px;
+}
+
+/* block, inline, inline-block, none (flex, grid) */

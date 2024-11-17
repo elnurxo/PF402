@@ -1,0 +1,37 @@
+h1 {
+    /* border: 10px solid black; */
+    /* border-width: 5px;
+    border-style: solid;
+    border-color: rgb(36, 75, 5); */
+
+    /* border-left: 4px solid red;
+    border-bottom: 2px dashed blue;
+    border-right: 20px solid green;
+    border-top: 3px solid black; */
+
+    /* border-left-color: ;
+    border-left-width: ;
+    border-left-style: ; */
+
+    border: 3px solid indianred;
+    padding-left: 12px;
+}
+
+
+.box {
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    /* border-radius: 15px; */
+    /* border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px; */
+    border-radius: 50%;
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+}
+.square{
+    width: 400px;
+    height: 200px;
+    margin: 0 auto;
+    background-color: greenyellow;
+    box-shadow: 10px 10px 5px olive;
+}
