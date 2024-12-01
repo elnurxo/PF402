@@ -1,0 +1,31 @@
+/* svg {
+  width: 30px;
+  height: 30px;
+} */
+#social-media {
+}
+ul {
+  list-style: none;
+  display: block;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+li a i {
+  color: black;
+  font-size: 30px;
+}
+i {
+  transition: 0.1s linear;
+}
+#youtube:hover > a > i {
+  color: red;
+}
+#linkedin:hover > a > i {
+  color: #0073ae;
+}
+#instagram:hover > a > i {
+  color: #a6368b;
+}

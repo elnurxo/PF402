@@ -1,0 +1,18 @@
+.box {
+  width: 60%;
+  height: 500px;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 30px auto;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.401), black),
+    url("https://m.media-amazon.com/images/I/91txlu5NEfL.jpg");
+  filter: grayscale(40%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.5s linear;
+}
+/* .box:hover {
+  background-image: url("https://m.media-amazon.com/images/I/91txlu5NEfL.jpg");
+  filter: grayscale(0%);
+} */

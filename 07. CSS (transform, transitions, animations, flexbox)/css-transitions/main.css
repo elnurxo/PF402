@@ -1,0 +1,45 @@
+.btn {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  background-color: tomato;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-transform: capitalize;
+  cursor: pointer;
+  /* css shorthand property */
+  /* transition */
+  /* transition-property: background-color;
+  transition-duration: 500ms;
+  transition-delay: 2s;
+  transition-timing-function: linear; */
+  transition: all 1s linear;
+}
+/* pseudo class */
+.btn:hover {
+  background-color: rgb(119, 35, 20);
+}
+
+.box {
+  margin: 50px auto;
+  width: 120px;
+  height: 120px;
+  background-color: deepskyblue;
+  border: 2px solid skyblue;
+  transition: all 1.5s cubic-bezier(0.23, 1.64, 0.72, -0.42);
+}
+
+.box:hover {
+  width: 220px;
+  height: 220px;
+}
+.box > button {
+  transition: 0.5s;
+}
+.box:hover > button {
+  background-color: black;
+  color: white;
+}

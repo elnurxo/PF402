@@ -1,0 +1,32 @@
+article h1 {
+  color: red;
+  text-align: center;
+  letter-spacing: 0.2em;
+  line-height: 3.5rem;
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  /* text-decoration-style: double;
+  text-decoration-color: blue;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px; */
+  /* text-decoration: 2px dashed line-through black; */
+  text-transform: capitalize;
+  background-color: black;
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+article a {
+  text-decoration: none;
+}
+article p {
+  border: 2px solid black;
+  width: 40%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-indent: 36px;
+  text-align: justify;
+  text-justify: inter-character;
+  word-spacing: 40px;
+}

@@ -1,0 +1,154 @@
+.wrapper {
+  margin: 50px auto;
+  width: 70%;
+  height: 500px;
+  border: 2px solid black;
+  position: relative;
+}
+.wrapper .heart {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  font-size: 54px;
+  animation: heart-beat 1s linear 0s infinite alternate;
+}
+
+@keyframes heart-beat {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  33% {
+    transform: translate(-50%, -50%) scale(1.4);
+  }
+  66% {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.wrapper .box {
+  position: absolute;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-color: tomato;
+  /* animation-name: movement;
+  animation-duration: 2s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-fill-mode: backwards; */
+  animation: movement 5s linear 0s infinite normal;
+}
+.wrapper:hover .box {
+  animation-play-state: paused;
+}
+
+/* @keyframes movement {
+  from {
+    left: 0;
+  }
+  to {
+    left: calc(100% - 100px);
+  }
+} */
+
+@keyframes movement {
+  0% {
+    left: 0;
+    top: 0;
+    background-color: tomato;
+  }
+  25% {
+    top: 0;
+    left: calc(100% - 100px);
+    background-color: orange;
+  }
+  50% {
+    top: calc(100% - 100px);
+    left: calc(100% - 100px);
+    background-color: red;
+  }
+  75% {
+    left: 0;
+    top: calc(100% - 100px);
+    background-color: yellow;
+  }
+  100% {
+    left: 0;
+    top: 0;
+    background-color: tomato;
+  }
+}
+body {
+  height: 300vh;
+}
+h2 {
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-top: 30px;
+}
+
+.road {
+  margin-top: 200px;
+  border-bottom: 4px dashed darkred;
+  position: relative;
+}
+.road img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  transform: rotate(-45deg);
+  animation: drive 3s linear 0s infinite alternate;
+}
+
+@keyframes drive {
+  from {
+    left: 0;
+    transform: rotate(-45deg);
+  }
+  to {
+    left: calc(100% - 200px);
+    transform: rotate(-45deg);
+  }
+}
+.cd-player {
+  margin: 50px auto;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background-image: url("https://w0.peakpx.com/wallpaper/100/154/HD-wallpaper-tame-impala-album-covers-cover-art-thumbnail.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: player 3s linear 0s infinite normal;
+}
+.white {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+}
+@keyframes player {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.title {
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
