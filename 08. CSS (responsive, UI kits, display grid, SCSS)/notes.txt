@@ -1,0 +1,14 @@
+notes
+
+- display GRID
+
+- CSS FRAMEWORKS: Bulma, Foundation, Skeleton, UIKit, 
+Milligram, Materialize CSS,Primer CSS, Pure CSS, Semantic UI, 
+Blaze UI, Spectre CSS, Onsen UI, Tachyons
+
+- Vite, Webpack, Parcel (bundler) +
+
+- SCSS 
+
+- Figma
+
