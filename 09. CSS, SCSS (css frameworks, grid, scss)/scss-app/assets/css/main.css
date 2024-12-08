@@ -1,0 +1,101 @@
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-danger, .btn-success, .btn-primary, .btn {
+  border: none;
+  padding: 12px 22px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-danger, .btn-success, .btn-primary, .btn {
+  border: none;
+  padding: 12px 22px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+h1 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: deepskyblue;
+  border: 1px solid black;
+}
+
+.list {
+  border: 1px solid black;
+}
+.list__item {
+  transition: 0.3s linear;
+}
+.list__item--link {
+  color: red;
+  transition: 0.2s linear;
+}
+.list__item--link:hover {
+  color: black;
+}
+.list__item:hover {
+  transform: translateX(10px);
+}
+
+.outer-box span {
+  color: red;
+}
+
+.btn {
+  background-color: gray;
+}
+.btn:hover {
+  background-color: black;
+}
+
+.btn-primary {
+  background-color: deepskyblue;
+}
+.btn-primary:hover {
+  background-color: rgb(0, 109, 145);
+}
+
+.btn-success {
+  background-color: green;
+}
+.btn-success:hover {
+  background-color: red;
+}
+
+.btn-danger {
+  background-color: red;
+}
+.btn-danger:hover {
+  background-color: rgb(134, 0, 0);
+}
+
+.box {
+  width: 60%;
+  height: 400px;
+  border: 2px solid black;
+}
+
+body {
+  background-color: black;
+  color: white;
+}/*# sourceMappingURL=main.css.map */

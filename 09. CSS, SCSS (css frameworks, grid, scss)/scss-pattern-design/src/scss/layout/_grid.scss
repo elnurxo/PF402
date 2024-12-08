@@ -1,0 +1,116 @@
+// Define mixin for grid column
+@mixin col($cols) {
+  width: calc(100% / 12 * #{$cols});
+}
+
+// Define mixin for responsive container width
+@mixin container-width($max-width, $width: 90%) {
+  width: $width;
+  max-width: $max-width;
+}
+
+// Base Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Grid Container
+.container {
+  @include container-width(1200px);
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+// Grid Row
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 16px;
+}
+
+// Columns (1 to 12)
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    @include col($i);
+  }
+}
+
+// Responsive Styles
+$breakpoints: (
+  sm: 599px,
+  md: 767px,
+  lg: 1023px,
+  xl: 1439px,
+  xxl: 1440px,
+);
+
+@each $size, $max-width in $breakpoints {
+  @if $size == "sm" {
+    // Small (sm) - max-width: 599px
+    @media (max-width: #{$max-width}) {
+      .container {
+        @include container-width(480px, 95%);
+      }
+
+      @for $i from 1 through 12 {
+        .col-sm-#{$i} {
+          @include col($i);
+        }
+      }
+    }
+  } @else if $size == "md" {
+    // Medium (md) - min-width: 600px, max-width: 767px
+    @media (min-width: 600px) and (max-width: #{$max-width}) {
+      .container {
+        @include container-width(600px);
+      }
+
+      @for $i from 1 through 12 {
+        .col-md-#{$i} {
+          @include col($i);
+        }
+      }
+    }
+  } @else if $size == "lg" {
+    // Large (lg) - min-width: 768px, max-width: 1023px
+    @media (min-width: 768px) and (max-width: #{$max-width}) {
+      .container {
+        @include container-width(800px, 85%);
+      }
+
+      @for $i from 1 through 12 {
+        .col-lg-#{$i} {
+          @include col($i);
+        }
+      }
+    }
+  } @else if $size == "xl" {
+    // Extra Large (xl) - min-width: 1024px, max-width: 1439px
+    @media (min-width: 1024px) and (max-width: #{$max-width}) {
+      .container {
+        @include container-width(1100px, 80%);
+      }
+
+      @for $i from 1 through 12 {
+        .col-xl-#{$i} {
+          @include col($i);
+        }
+      }
+    }
+  } @else if $size == "xxl" {
+    // Extra Extra Large (xxl) - min-width: 1440px
+    @media (min-width: 1440px) {
+      .container {
+        @include container-width(1200px, 75%);
+      }
+
+      @for $i from 1 through 12 {
+        .col-xxl-#{$i} {
+          @include col($i);
+        }
+      }
+    }
+  }
+}

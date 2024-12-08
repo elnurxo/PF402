@@ -1,0 +1,5 @@
+body{
+    @include breakpoint(mobile){
+        background-color: red;
+    }
+}

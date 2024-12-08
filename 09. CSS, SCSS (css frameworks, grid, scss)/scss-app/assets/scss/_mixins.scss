@@ -1,0 +1,9 @@
+@import "./extends";
+
+@mixin buttonGenerator($bgc-color: gray, $hover-color: black) {
+  @extend %button-base;
+  background-color: $bgc-color;
+  &:hover {
+    background-color: $hover-color;
+  }
+}

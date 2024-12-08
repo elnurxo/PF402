@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Cards with Navbar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <style>
+        body {
+            padding: 2rem;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Responsive Navbar -->
+    <div class="ui top fixed menu">
+        <div class="ui container">
+            <a class="header item">MyApp</a>
+            <a class="item">Home</a>
+            <a class="item">About</a>
+            <a class="item">Contact</a>
+            <div class="right menu">
+                <div class="item">
+                    <button class="ui button">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spacer for Navbar -->
+    <div style="margin-top: 4rem;"></div>
+
+    <!-- Cards Section -->
+    <h2>Our Featured Cards</h2>
+    <div class="ui container">
+        <div class="ui stackable doubling grid">
+            <!-- Card 1 -->
+            <div class="four wide column">
+                <div class="ui card">
+                    <div class="content">
+                        <div class="header">Card 1</div>
+                        <div class="description">
+                            This is the description for card 1.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="four wide column">
+                <div class="ui card">
+                    <div class="content">
+                        <div class="header">Card 2</div>
+                        <div class="description">
+                            This is the description for card 2.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="four wide column">
+                <div class="ui card">
+                    <div class="content">
+                        <div class="header">Card 3</div>
+                        <div class="description">
+                            This is the description for card 3.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="four wide column">
+                <div class="ui card">
+                    <div class="content">
+                        <div class="header">Card 4</div>
+                        <div class="description">
+                            This is the description for card 4.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</body>
+
+</html>

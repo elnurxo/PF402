@@ -6,6 +6,8 @@ notes
 Milligram, Materialize CSS,Primer CSS, Pure CSS, Semantic UI, 
 Blaze UI, Spectre CSS, Onsen UI, Tachyons
 
+- Bulma, Semantic UI, display GRID
+
 - Vite, Webpack, Parcel (bundler) +
 
 - SCSS 
