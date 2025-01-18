@@ -1,0 +1,16 @@
+.box {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  border-radius: 6px;
+  margin-top: 22px;
+  transition: 0.1s linear;
+}
+
+.dark {
+  background-color: black;
+}
+
+.hide {
+  display: none;
+}
