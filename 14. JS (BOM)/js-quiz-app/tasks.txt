@@ -1,0 +1,11 @@
+home page
+- title (Quiz App)
+- form (question, answer, difficulty [easy, medium, hard], category, createdAt, id)
+- search bar, sort select option
+- - - - - - - - - 
+list items (quiz bootstrap accordion) 
+- get all, delete, update?
+
+- - - - - - - - - - - - - - - - - - 
+class -> Quiz (question, answer, difficulty, category)
+helper function -> 

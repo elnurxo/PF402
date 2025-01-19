@@ -1,0 +1,11 @@
+Regex, custom methods (arrays etc.) +
+try catch, handling errors +
+DOM -> START +
+
+
+- - - - - - - - - - - - -
+BOM, JS events, event-flow (bubbling, capturing) +
+once:true, removeEventListener, custom Events +
+event delegation, load events, scroll events, modal, sweet alert +
+
+sweet alert, simple quiz app
