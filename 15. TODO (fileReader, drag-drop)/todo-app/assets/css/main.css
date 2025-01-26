@@ -1,0 +1,65 @@
+body {
+  min-height: 100vh;
+  background: rgb(99, 216, 210);
+  background: linear-gradient(135deg, rgb(99, 216, 210) 0%, rgb(75, 139, 226) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.todo {
+  background-color: white;
+  padding: 16px 22px;
+  border-radius: 7px;
+  width: 30%;
+}
+.todo-form {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.todo-list {
+  width: 100%;
+  padding: 0;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.todo-list span {
+  padding-left: 6px;
+}
+
+.todo-list__item {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-purple {
+  background-color: rgb(158, 1, 158);
+  color: white;
+  transition: 0.3s linear;
+}
+.btn-purple:hover {
+  background-color: rgb(111, 0, 111);
+  color: white;
+}
+
+.todo-footer {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clock {
+  font-weight: 600;
+}/*# sourceMappingURL=main.css.map */

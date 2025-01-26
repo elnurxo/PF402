@@ -1,0 +1,64 @@
+.drop-zone {
+  margin: 0 auto;
+  width: 15%;
+  height: 120px;
+  border: 2px dotted gray;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.drop-zone i {
+  color: black;
+  font-size: 28px;
+}
+.slider-wrapper {
+  border: 1px solid black;
+  width: 60%;
+  margin: 0 auto;
+  height: 450px;
+  position: relative;
+}
+.slider {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  overflow: hidden;
+}
+.slide {
+  min-width: 100%;
+  height: 100%;
+  transition: 0.3s linear;
+  /* transform: translateX(-100%); */
+}
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.controller-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background: lightgray;
+  opacity: 0.6;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s linear;
+}
+.controller-btn:hover {
+  opacity: 1;
+}
+.prev-btn {
+  left: 4%;
+}
+.next-btn {
+  right: 4%;
+}
