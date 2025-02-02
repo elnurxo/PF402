@@ -1,0 +1,11 @@
+async-await +, fetch +, axios, HTTP requests, status codes, 
+event loop +, web APIs +, json-server,
+mock-api, public apis, deploying json-server, 
+detail pages +, auth apis - (cookie)
+
+- - - - - - - - - - - - - - - - - - - -
+axios
+json-server
+mock-api
+deploying json-server
+auth apis - (cookie)

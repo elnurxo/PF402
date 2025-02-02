@@ -1,0 +1,35 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "johnathan_123",
+      "password": "John123!",
+      "email": "john@gmail.com"
+    },
+    {
+      "id": 2,
+      "username": "beck_sandler",
+      "password": "Beck1234!",
+      "email": "beck@gmail.com"
+    },
+    {
+      "id": 3,
+      "username": "jonas_1234",
+      "password": "Jonas!@#!",
+      "email": "jonas@gmail.com"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Bakery",
+      "description": "un memulatlari"
+    },
+    {
+      "id": "2",
+      "name": "Drinks",
+      "description": "ickiler"
+    }
+  ],
+  "animals": []
+}
