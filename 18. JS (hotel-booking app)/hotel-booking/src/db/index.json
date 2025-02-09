@@ -1,0 +1,140 @@
+{
+  "hotels": [
+    {
+      "id": "1",
+      "name": "Ocean Breeze Resort",
+      "stars": 2,
+      "coverImage": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/114104744.jpg?k=5f0b07777e95311529516474b4b24a6bf0f32ae41ec2b5fe64800be89073cf48&o=&hp=1",
+      "images": [
+        "https://example.com/images/ocean-breeze-1.jpg",
+        "https://example.com/images/ocean-breeze-2.jpg",
+        "https://example.com/images/ocean-breeze-3.jpg"
+      ],
+      "location": "Miami, Florida",
+      "priceForNight": 150,
+      "currency": "USD",
+      "rating": 4.5,
+      "reviews": [],
+      "info": "A serene beachside resort with modern amenities and breathtaking ocean views.",
+      "isAvailable": true,
+      "amenities": [
+        "Parking",
+        "Free WiFi",
+        "Swimming Pool",
+        "Breakfast",
+        "Gym"
+      ],
+      "checkInTime": "3:00 PM",
+      "checkOutTime": "11:00 AM",
+      "discount": 10,
+      "email": "contact@oceanbreezeresort.com",
+      "phoneNumber": "+1-305-555-0123"
+    },
+    {
+      "id": "2",
+      "name": "Mountain Escape Lodge",
+      "stars": 5,
+      "coverImage": "https://media.vrbo.com/lodging/101000000/100410000/100402000/100401906/w950h683x37y0-9c610560.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill",
+      "images": [
+        "https://example.com/images/mountain-escape-1.jpg",
+        "https://example.com/images/mountain-escape-2.jpg",
+        "https://example.com/images/mountain-escape-3.jpg"
+      ],
+      "location": "Aspen, Colorado",
+      "priceForNight": 300,
+      "currency": "USD",
+      "rating": 4.8,
+      "reviews": [],
+      "info": "Luxury lodge located in the heart of the mountains, ideal for skiing and relaxation.",
+      "isAvailable": false,
+      "amenities": ["Parking", "Free WiFi", "Swimming Pool", "Gym"],
+      "checkInTime": "2:00 PM",
+      "checkOutTime": "12:00 PM",
+      "discount": 15,
+      "email": "contact@mountainescapelodge.com",
+      "phoneNumber": "+1-970-555-0456"
+    },
+    {
+      "id": "3",
+      "name": "Urban Delight Hotel",
+      "stars": 3,
+      "coverImage": "https://pix10.agoda.net/hotelImages/31721999/0/c896af03b170b203e0c3e29b7543888b.jpg?ca=29&ce=0&s=1024x768",
+      "images": [
+        "https://example.com/images/urban-delight-1.jpg",
+        "https://example.com/images/urban-delight-2.jpg",
+        "https://example.com/images/urban-delight-3.jpg"
+      ],
+      "location": "New York City, New York",
+      "priceForNight": 100,
+      "currency": "USD",
+      "rating": 3.9,
+      "reviews": [],
+      "info": "A modern hotel in the heart of the city, perfect for business and leisure travelers.",
+      "isAvailable": true,
+      "amenities": ["Free WiFi", "Breakfast"],
+      "checkInTime": "4:00 PM",
+      "checkOutTime": "10:00 AM",
+      "discount": 5,
+      "email": "contact@urbandelighthotel.com",
+      "phoneNumber": "+1-212-555-0789"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "john_doe",
+      "fullName": "John Doe",
+      "email": "john.doe@example.com",
+      "balance": 1200,
+      "role": "client",
+      "password": "securepassword123",
+      "profileImg": "https://example.com/images/profiles/john_doe.jpg",
+      "favorites": [],
+      "bookings": [],
+      "createdAt": "2023-07-15",
+      "bio": "Travel enthusiast who loves exploring new places and trying exotic cuisines."
+    },
+    {
+      "id": "2",
+      "username": "jane_smith",
+      "fullName": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "balance": 2500,
+      "role": "client",
+      "password": "mypassword456",
+      "profileImg": "https://example.com/images/profiles/jane_smith.jpg",
+      "favorites": [],
+      "bookings": [],
+      "createdAt": "2022-10-20",
+      "bio": "Adventure seeker and avid photographer."
+    },
+    {
+      "id": "3",
+      "username": "admin_user",
+      "fullName": "Admin User",
+      "email": "admin@example.com",
+      "balance": 0,
+      "role": "admin",
+      "password": "adminpassword789",
+      "profileImg": "https://example.com/images/profiles/admin_user.jpg",
+      "favorites": [],
+      "bookings": [],
+      "createdAt": "2021-01-01",
+      "bio": "Managing platform operations with a passion for customer satisfaction."
+    },
+    {
+      "id": "a188",
+      "fullName": "Elnur Khalilov",
+      "username": "elnurxo",
+      "email": "elnur.khalilov@code.edu.az",
+      "password": "Elnur123",
+      "balance": 0,
+      "role": "client",
+      "profileImg": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
+      "favorites": [],
+      "bookings": [],
+      "createdAt": "2025-02-09T08:14:12.347Z",
+      "bio": ""
+    }
+  ]
+}
