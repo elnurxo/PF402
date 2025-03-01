@@ -1,0 +1,13 @@
+Introduction to React and basic concepts.
+React components and props.React styling and Router
+
+React Intro, What is React (pros, cons) +
+React installation, project setup with vite +
+React Fragments +
+React Components, Smart Components +
+React Virtual DOM +
+practise (Products Data with components) +
+----------------------------
+useState hooks, React States
+React Props, Components flow, Props Drilling, Prop-types
+useEffect hook, React Components Lifecycle, fetching data, axios, API service
