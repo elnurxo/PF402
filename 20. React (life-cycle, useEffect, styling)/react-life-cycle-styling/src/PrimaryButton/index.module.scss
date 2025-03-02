@@ -1,0 +1,13 @@
+$blue: rgb(208, 236, 49);
+.btn {
+  padding: 12px 24px;
+  color: white;
+  border-radius: 7px;
+  transition: .3s;
+  &:hover{
+    background-color: black;
+  }
+}
+.primary-btn {
+  background-color: $blue;
+}
