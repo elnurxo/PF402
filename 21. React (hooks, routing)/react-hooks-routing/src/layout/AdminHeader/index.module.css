@@ -1,0 +1,13 @@
+.active {
+  color: white !important;
+  text-decoration: underline !important;
+}
+.header {
+  background: rgb(100, 4, 4) !important;
+  background: linear-gradient(
+    90deg,
+    rgba(100, 4, 4, 1) 0%,
+    rgba(155, 52, 52, 1) 54%,
+    rgba(197, 78, 78, 1) 100%
+  ) !important;
+}
