@@ -1,0 +1,69 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "password": "hashed_password_123",
+      "role": "customer",
+      "profileImage": "https://plus.unsplash.com/premium_photo-1689530775582-83b8abdb5020?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww",
+      "isBanned": false
+    },
+    {
+      "id": "2",
+      "name": "Bob Smith",
+      "email": "bob.smith@example.com",
+      "password": "hashed_password_456",
+      "role": "admin",
+      "profileImage": "https://img.freepik.com/free-photo/front-view-smiley-woman-with-earbuds_23-2148613052.jpg",
+      "isBanned": false
+    },
+    {
+      "id": "f367",
+      "fullName": "Elnur Khalilov",
+      "email": "elnur@gmail.com",
+      "password": "Elnur123",
+      "role": "customer",
+      "profileImage": "https://img.freepik.com/premium-vector/man-avatar-profile-picture-isolated-background-avatar-profile-picture-man_1293239-4866.jpg?semt=ais_hybrid",
+      "isBanned": false
+    },
+    {
+      "id": "242b",
+      "fullName": "Ali Mammadov",
+      "email": "rashad.khalilov@code.edu.az",
+      "password": "Ali123",
+      "role": "customer",
+      "profileImage": "https://img.freepik.com/premium-vector/man-avatar-profile-picture-isolated-background-avatar-profile-picture-man_1293239-4866.jpg?semt=ais_hybrid",
+      "isBanned": false
+    }
+  ],
+  "cars": [
+    {
+      "id": "101",
+      "name": "Toyota",
+      "model": "Corolla",
+      "year": 2020,
+      "daily_price": 50,
+      "availability": true
+    },
+    {
+      "id": "102",
+      "name": "Honda",
+      "model": "Civic",
+      "year": 2019,
+      "daily_price": 45,
+      "availability": false
+    }
+  ],
+  "rentals": [
+    {
+      "id": "1001",
+      "user_id": 1,
+      "car_id": 101,
+      "start_date": "2025-03-14",
+      "end_date": "2025-03-16",
+      "total_cost": 100,
+      "status": "completed"
+    }
+  ]
+}
