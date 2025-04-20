@@ -33,7 +33,7 @@ export default function Orders() {
                     <select className="bg-gray-100 text-sm px-3 py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                       <option value="Pending">Pending</option>
                       <option value="Processing">Processing</option>
-                      <option value="Completed" selected>
+                      <option value="Completed">
                         Completed
                       </option>
                       <option value="Cancelled">Cancelled</option>

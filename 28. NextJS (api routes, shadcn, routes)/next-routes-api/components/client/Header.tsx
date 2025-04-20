@@ -51,7 +51,7 @@ function Header() {
     <header className={`py-5 px-10 shadow shadow-gray-200`}>
       <div className="flex items-center justify-between">
         <div className="logo">
-          <Link className="font-bold text-3xl" href={"/"}>
+          <Link prefetch={true} className="font-bold text-3xl" href={"/"}>
             <span className="text-blue-500">Code</span>
             <span className="text-gray-800 dark:text-white">Market</span>
           </Link>
@@ -61,6 +61,7 @@ function Header() {
             links.map((navigation, idx) => {
               return (
                 <Link
+                  prefetch={true}
                   className={`hover:scale-95 transition ${
                     isActive(navigation.link) && "text-blue-500"
                   }`}
