@@ -4,21 +4,21 @@ import { Prisma } from "@prisma/client";
 
 export async function getProducts(name?: string | null): Promise<Product[]> {
   if (name) {
-    return await prisma.product.findMany({
+    return prisma.product.findMany({
       where: {
-        name: name,
+        name: {
+          contains: name, // partial matching
+          mode: "insensitive", // optional: case-insensitive search
+        },
       },
     });
-  } else {
-    return await prisma.product.findMany();
   }
+  return prisma.product.findMany();
 }
 
 export async function getProductById(id: number): Promise<Product | null> {
-  return await prisma.product.findUnique({
-    where: {
-      id: id,
-    },
+  return prisma.product.findUnique({
+    where: { id },
   });
 }
 
@@ -28,9 +28,7 @@ export async function postProduct(
     Prisma.ProductUncheckedCreateInput
   >
 ): Promise<ProductResponse> {
-  const res = await prisma.product.create({
-    data: product,
-  });
+  const res = await prisma.product.create({ data: product });
   return {
     message: "Product created successfully",
     data: res,
@@ -39,9 +37,7 @@ export async function postProduct(
 
 export async function deleteProductById(id: number): Promise<ProductResponse> {
   const res = await prisma.product.delete({
-    where: {
-      id: id,
-    },
+    where: { id },
   });
   return {
     message: "Product deleted successfully",
@@ -51,12 +47,10 @@ export async function deleteProductById(id: number): Promise<ProductResponse> {
 
 export async function updateProductById(
   id: number,
-  updatedProduct: Partial<Product>
+  updatedProduct: Prisma.ProductUpdateInput // more precise typing
 ): Promise<ProductResponse> {
   const res = await prisma.product.update({
-    where: {
-      id,
-    },
+    where: { id },
     data: updatedProduct,
   });
   return {

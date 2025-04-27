@@ -7,14 +7,17 @@ import { handleError } from "@/lib/error-handler";
 import { type NextRequest, NextResponse } from "next/server";
 import { Product } from "@/types/product";
 
+// Utility to safely parse id
+const parseId = (params: { id: string }) => Number(params.id);
+
 // GET - Retrieve a product by ID
 export async function GET(
   _request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: { id: string } }
 ) {
   try {
-    const { id } = await params;
-    const product = await getProductById(Number(id));
+    const id = parseId(params);
+    const product = await getProductById(id);
 
     if (!product) {
       return NextResponse.json(
@@ -35,11 +38,11 @@ export async function GET(
 // DELETE - Remove a product by ID
 export async function DELETE(
   _request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: { id: string } }
 ) {
   try {
-    const { id } = await params;
-    const result = await deleteProductById(+id);
+    const id = parseId(params);
+    const result = await deleteProductById(id);
 
     if (!result.data) {
       return NextResponse.json(result, { status: 404 });
@@ -54,31 +57,29 @@ export async function DELETE(
 // PATCH - Update a product by ID (partial update)
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: Promise<{ id: number }> }
+  { params }: { params: { id: string } }
 ) {
   try {
     const body = await request.json();
+    const id = parseId(params);
 
-    // Create a clean update object with only valid fields
     const updateData: Partial<Product> = {};
     const { name, price, inStock, stockQuantity } = body;
 
-    if (name) {
-      updateData.name = name;
-    }
-    if (price) {
-      updateData.price = price;
-    }
-    if (inStock) {
-      updateData.inStock = inStock;
-    }
-    if (stockQuantity) {
+    if (typeof name === "string") updateData.name = name.trim();
+    if (typeof price === "number") updateData.price = price;
+    if (typeof inStock === "boolean") updateData.inStock = inStock;
+    if (typeof stockQuantity === "number")
       updateData.stockQuantity = stockQuantity;
+
+    if (Object.keys(updateData).length === 0) {
+      return NextResponse.json(
+        { message: "No valid fields provided for update" },
+        { status: 400 }
+      );
     }
 
-    // Only pass the validated fields to the update function
-    const { id } = await params;
-    const result = await updateProductById(+id, updateData);
+    const result = await updateProductById(id, updateData);
 
     if (!result.data) {
       return NextResponse.json(result, { status: 404 });
@@ -93,15 +94,28 @@ export async function PATCH(
 // PUT - Replace a product by ID (full update)
 export async function PUT(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: { id: string } }
 ) {
   try {
     const body = await request.json();
+    const id = parseId(params);
+
     const { name, price, inStock, stockQuantity } = body;
 
-    // Check if product exists first
-    const { id } = await params;
-    const existingProduct = await getProductById(+id);
+    // Validate presence of all required fields
+    if (
+      typeof name !== "string" ||
+      typeof price !== "number" ||
+      typeof inStock !== "boolean" ||
+      typeof stockQuantity !== "number"
+    ) {
+      return NextResponse.json(
+        { message: "Missing or invalid fields for product replacement" },
+        { status: 400 }
+      );
+    }
+
+    const existingProduct = await getProductById(id);
     if (!existingProduct) {
       return NextResponse.json(
         { message: "Product not found", data: null },
@@ -109,16 +123,15 @@ export async function PUT(
       );
     }
 
-    // Create a new product object with all required fields
     const updatedProduct: Partial<Product> = {
+      id,
       name: name.trim(),
-      price: price,
-      inStock: inStock,
+      price,
+      inStock,
       stockQuantity,
     };
 
-    // Update the product with all fields
-    const result = await updateProductById(+id, updatedProduct);
+    const result = await updateProductById(id, updatedProduct);
 
     return NextResponse.json(result, { status: 200 });
   } catch (error) {

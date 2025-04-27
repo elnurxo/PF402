@@ -2,6 +2,13 @@ import { getProducts, postProduct } from "@/services/productService";
 import { handleError } from "@/lib/error-handler";
 import { type NextRequest, NextResponse } from "next/server";
 
+interface CreateProductRequest {
+  name: string;
+  price: number;
+  inStock: boolean;
+  stockQuantity: number;
+}
+
 // GET - List all products or filter by name
 export async function GET(request: NextRequest) {
   try {
@@ -23,17 +30,11 @@ export async function GET(request: NextRequest) {
 // POST - Create a new product
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
-    const { name, price, inStock, stockQuantity } = body;
+    const body = (await request.json()) as CreateProductRequest;
 
-    //validation
+    //validation (not implemented yet)
 
-    const result = await postProduct({
-      name,
-      price,
-      inStock,
-      stockQuantity,
-    });
+    const result = await postProduct(body);
 
     return NextResponse.json(result, { status: 201 });
   } catch (error) {

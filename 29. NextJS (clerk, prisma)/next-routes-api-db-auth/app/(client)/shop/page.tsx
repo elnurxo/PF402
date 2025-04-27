@@ -1,80 +1,110 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { createUser } from "@/app/actions/products";
+import { createProduct } from "@/app/actions/products";
 import { getProducts } from "@/services/productService";
-//SERVER COMPONENT
+
+// SERVER COMPONENT
 export default async function Shop() {
   const products = await getProducts();
+
   return (
-    <>
-      <h1 className=" mt-4.5 text-center text-4xl text-gray-800 dark:text-white">
-        Shop Page!
+    <main className="container mx-auto py-8">
+      <h1 className="text-center text-4xl font-bold text-gray-800 dark:text-white mb-6">
+        Shop Page
       </h1>
-      <hr />
-      {/* give form with tailwind css for product with name, price, stockQuantity and inStock fields */}
-      <form
-        action={createUser}
-        className="flex flex-col items-center justify-center space-y-2.5 my-2 mx-auto border p-3 w-[25%]"
-      >
-        <div className="flex gap-2">
-          <div>
-            <label htmlFor="name">Product Name</label>
+
+      {/* Product Form */}
+      <section className="w-full max-w-md mx-auto mb-10 p-6 border rounded-lg shadow-sm">
+        <h2 className="text-2xl font-semibold text-center mb-4">
+          Add a Product
+        </h2>
+        <form action={createProduct} className="flex flex-col gap-4">
+          <div className="flex flex-col gap-2">
+            <label htmlFor="name" className="text-sm font-medium">
+              Product Name
+            </label>
             <input
               type="text"
               id="name"
               name="name"
-              className="border rounded p-1 w-full"
+              required
+              className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
           </div>
-          <div>
-            <label htmlFor="price">Price</label>
+
+          <div className="flex flex-col gap-2">
+            <label htmlFor="price" className="text-sm font-medium">
+              Price
+            </label>
             <input
               type="number"
               id="price"
               name="price"
-              className="border rounded p-1 w-full"
+              required
+              className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
           </div>
-        </div>
-        <label htmlFor="stockQuantity">Stock Quantity</label>
-        <input
-          type="number"
-          id="stockQuantity"
-          name="stockQuantity"
-          className="border rounded p-1 w-full"
-        />
-        <div className="flex justify-center gap-4">
-          <label htmlFor="inStock">In Stock</label>
-          <input
-            type="checkbox"
-            id="inStock"
-            name="inStock"
-            className="border rounded p-1 w-full"
-          />
-        </div>
-        <button
-          className="bg-blue-500 rounded px-4 py-2 text-white cursor-pointer hover:shadow"
-          type="submit"
-        >
-          add
-        </button>
-      </form>
-      <hr className="border-red-400 my-4" />
 
-      <ul className="w-[25%] text-center space-y-1.5 my-2 mx-auto border p-3">
-        {products &&
-          products.map((product) => {
-            return (
-              <li key={product.id}>
-                {product.name} | <i>{product.price}</i>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="stockQuantity" className="text-sm font-medium">
+              Stock Quantity
+            </label>
+            <input
+              type="number"
+              id="stockQuantity"
+              name="stockQuantity"
+              required
+              className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+          </div>
+
+          <div className="flex items-center gap-2">
+            <input
+              type="checkbox"
+              id="inStock"
+              name="inStock"
+              className="w-5 h-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+            />
+            <label htmlFor="inStock" className="text-sm font-medium">
+              In Stock
+            </label>
+          </div>
+
+          <button
+            type="submit"
+            className="bg-blue-600 text-white rounded px-4 py-2 hover:bg-blue-700 transition"
+          >
+            Add Product
+          </button>
+        </form>
+      </section>
+
+      {/* Product List */}
+      <section className="w-full max-w-md mx-auto mb-10 p-6 border rounded-lg shadow-sm">
+        <h2 className="text-2xl font-semibold text-center mb-4">Products</h2>
+        {products.length > 0 ? (
+          <ul className="space-y-3">
+            {products.map((product) => (
+              <li
+                key={product.id}
+                className="flex justify-between border-b pb-2 text-gray-700 dark:text-gray-300"
+              >
+                <span>{product.name}</span>
+                <span>${product.price}</span>
               </li>
-            );
-          })}
-      </ul>
-      <hr />
-      <Button variant={"outline"} className="block mx-auto mt-2.5">
-        <Link href={"/auth/login"}>Start Shopping!</Link>
-      </Button>
-    </>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-center text-gray-500">No products found.</p>
+        )}
+      </section>
+
+      {/* Footer */}
+      <div className="flex justify-center">
+        <Button variant="outline" asChild>
+          <Link href="/auth/login">Start Shopping!</Link>
+        </Button>
+      </div>
+    </main>
   );
 }
