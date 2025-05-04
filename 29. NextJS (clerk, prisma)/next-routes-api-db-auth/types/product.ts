@@ -13,6 +13,7 @@ export interface ProductResponse {
   data: Product | Product[] | null;
 }
 
+
 export interface ErrorResponse {
   message: string;
 }

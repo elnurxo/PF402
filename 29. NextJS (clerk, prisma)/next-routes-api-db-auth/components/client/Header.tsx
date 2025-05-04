@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { useUser, UserButton } from "@clerk/nextjs";
 import {
   House,
@@ -14,7 +15,7 @@ import {
 } from "lucide-react";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -32,6 +33,14 @@ type NavigationType = {
 function Header() {
   const { setTheme } = useTheme();
   const { isSignedIn, user } = useUser();
+  const role = user?.publicMetadata.role;
+
+  // useEffect(() => {
+  //   if (role === "admin") {
+  //     redirect("/admin");
+  //   }
+  // }, [role]);
+
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenuBar = () => setIsMenuOpen(!isMenuOpen);
@@ -88,6 +97,13 @@ function Header() {
           {isSignedIn ? (
             <>
               <UserButton />
+              {role === "admin" ? (
+                <>
+                  <h1>hey admin</h1>
+                </>
+              ) : (
+                <></>
+              )}
             </>
           ) : (
             <>

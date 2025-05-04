@@ -1,6 +1,7 @@
 import { getProducts, postProduct } from "@/services/productService";
 import { handleError } from "@/lib/error-handler";
 import { type NextRequest, NextResponse } from "next/server";
+import ProductValidationSchema from "@/app/validations/product.validation";
 
 interface CreateProductRequest {
   name: string;
@@ -32,11 +33,18 @@ export async function POST(request: NextRequest) {
   try {
     const body = (await request.json()) as CreateProductRequest;
 
-    //validation (not implemented yet)
+    //validation
+    const { success, error } = ProductValidationSchema.safeParse(body);
+    const errorMessage = error?.issues[0];
 
-    const result = await postProduct(body);
-
-    return NextResponse.json(result, { status: 201 });
+    if (success) {
+      //validated
+      const result = await postProduct(body);
+      return NextResponse.json(result, { status: 201 });
+    } else {
+      //not validated
+      return NextResponse.json(errorMessage, { status: 403 });
+    }
   } catch (error) {
     return handleError(error);
   }

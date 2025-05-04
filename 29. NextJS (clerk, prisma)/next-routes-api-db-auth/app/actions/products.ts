@@ -15,6 +15,7 @@ export async function createProduct(formData: FormData): Promise<void> {
     const price = Number(formData.get("price"));
     const inStock = formData.get("inStock") === "on";
     const stockQuantity = Number(formData.get("stockQuantity"));
+    const categories = formData.get("categories");
 
     if (!name || isNaN(price) || isNaN(stockQuantity)) {
       throw new Error("Invalid input data.");
@@ -25,6 +26,7 @@ export async function createProduct(formData: FormData): Promise<void> {
       price,
       inStock,
       stockQuantity,
+      categories: [categories],
     });
 
     revalidatePath("/shop");

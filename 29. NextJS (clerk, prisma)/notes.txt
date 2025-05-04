@@ -1,0 +1,22 @@
+zod validation for API (services | api routes | server actions)
+
+
+clerk webhooks (users data sync with clerk<->prisma)
+
+
+relational data (categories->products)
+
+
+server actions in deep (difference between API route handlers, where to use etc.)
+
+
+Prisma types (Prisma.ProductCreateInput, ProductUpdateInput etc.)
+
+
+data fetching in client components vs server components
+
+
+SSR, CSR, ISG, SSG, data fetching in Next, Suspense, Lazy Loading
+
+
+quizes (redux, typescript, next?)

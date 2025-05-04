@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Product, ProductResponse } from "@/types/product";
 import { prisma } from "@/lib/prisma";
 import { Prisma } from "@prisma/client";
@@ -13,7 +14,20 @@ export async function getProducts(name?: string | null): Promise<Product[]> {
       },
     });
   }
-  return prisma.product.findMany();
+  return prisma.product.findMany({
+    include: {
+      categories: true,
+    },
+  });
+}
+
+//additional get all categories
+export async function getCategories(): Promise<any[]> {
+  return prisma.categories.findMany({
+    include: {
+      product: true,
+    },
+  });
 }
 
 export async function getProductById(id: number): Promise<Product | null> {
@@ -23,10 +37,7 @@ export async function getProductById(id: number): Promise<Product | null> {
 }
 
 export async function postProduct(
-  product: Prisma.XOR<
-    Prisma.ProductCreateInput,
-    Prisma.ProductUncheckedCreateInput
-  >
+  product: any
 ): Promise<ProductResponse> {
   const res = await prisma.product.create({ data: product });
   return {

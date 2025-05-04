@@ -1,0 +1,218 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "john_doe",
+      "email": "john@gmail.com",
+      "password": "John123",
+      "basketItems": []
+    },
+    {
+      "id": "ac79",
+      "email": "elnur.khalilov@code.edu.az",
+      "username": "elnurdev",
+      "password": "Elnur123",
+      "basketItems": [
+        {
+          "id": 190,
+          "productId": "3",
+          "quantity": 1
+        },
+        {
+          "id": 240,
+          "productId": "2",
+          "quantity": 1
+        },
+        {
+          "id": 809,
+          "productId": "1",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "62d3",
+      "email": "orxan@gmail.com",
+      "username": "orxandev",
+      "password": "Orxan123",
+      "basketItems": [
+        {
+          "id": 544,
+          "productId": "3",
+          "quantity": 2
+        },
+        {
+          "id": 137,
+          "productId": "4",
+          "quantity": 1
+        },
+        {
+          "id": 164,
+          "productId": "5",
+          "quantity": 1
+        },
+        {
+          "id": 297,
+          "productId": "6",
+          "quantity": 3
+        },
+        {
+          "id": 60,
+          "productId": "7",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "title": "Skittles",
+      "description": "Fruity bite-sized chewy candy in a rainbow of flavors.",
+      "category": "candy",
+      "price": 2.5,
+      "imageURL": "https://cdn.abcotvs.com/dip/images/13550621_072623-wabc-skittles-mustard-img.jpg",
+      "reviews": [
+        {
+          "id": "1",
+          "fullName": "Elnur Khalilov",
+          "comment": "Great product!"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Coca-Cola 500ml",
+      "description": "Refreshing classic soda, served chilled.",
+      "category": "beverage",
+      "price": 1.8,
+      "imageURL": "https://images.fastcompany.com/image/upload/f_webp,c_fit,w_1920,q_auto/wp-cms-2/2025/04/p-1-Coca-Cola-Anti-Fad-Classic-Campaign-mixes-newness-with-nostaligia.jpg",
+      "reviews": [
+        {
+          "id": "1",
+          "fullName": "Lale Mammadova",
+          "comment": "Always a go-to drink!"
+        },
+        {
+          "id": "171",
+          "fullName": "John Doe",
+          "comment": "good!"
+        },
+        {
+          "id": "557",
+          "fullName": "Memmedov",
+          "comment": "saalam"
+        },
+        {
+          "id": "842",
+          "fullName": "Memmedov",
+          "comment": "hey"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Snickers Bar",
+      "description": "Chocolate bar filled with nougat, caramel, and peanuts.",
+      "category": "candy",
+      "price": 1.2,
+      "imageURL": "https://images.fastcompany.com/image/upload/f_webp,q_auto,c_fit/wp-cms-2/2024/10/p-1-91218458-snickers-bar-conversation-repub.jpg",
+      "reviews": [
+        {
+          "id": "1",
+          "fullName": "Murad Aliyev",
+          "comment": "Satisfies my hunger every time."
+        },
+        {
+          "id": "191",
+          "fullName": "Elnur Khalilov",
+          "comment": "better than twix!"
+        },
+        {
+          "id": "811",
+          "fullName": "Fidan Memmedova",
+          "comment": "great!"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Oreo Cookies",
+      "description": "Chocolate sandwich cookies with a sweet cream filling.",
+      "category": "snacks",
+      "price": 2,
+      "imageURL": "https://www.gastronomicspain.com/5764-large_default/oreo-cookies.webp",
+      "reviews": [
+        {
+          "id": "1",
+          "fullName": "Aysel Rzayeva",
+          "comment": "Perfect with milk!"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Lay's Classic Chips",
+      "description": "Crispy and salty potato chips made from real potatoes.",
+      "category": "snacks",
+      "price": 1.5,
+      "imageURL": "https://www.allrecipes.com/thmb/LAfNFUjS5nZBIjOB53D1gS_GB3k=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/ar-lays-taste-test-group-4x3-67f87a8f3c4c4710b50ab762b7f90257.jpg",
+      "reviews": []
+    },
+    {
+      "id": "6",
+      "title": "Red Bull Energy Drink",
+      "description": "Energy drink to boost performance and alertness.",
+      "category": "beverage",
+      "price": 3,
+      "imageURL": "https://kickinchicken.com/wp-content/uploads/2023/08/Red-Bull-Energy-Drink.jpg",
+      "reviews": [
+        {
+          "id": "1",
+          "fullName": "Ilham Javadov",
+          "comment": "Keeps me energized during long nights."
+        },
+        {
+          "id": "118",
+          "fullName": "Elnur Khalilov",
+          "comment": "redbull qanadlandirir"
+        },
+        {
+          "id": "348",
+          "fullName": "salaw",
+          "comment": "wrhwqrhj"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "title": "KitKat",
+      "description": "Crispy wafer fingers coated in milk chocolate.",
+      "category": "candy",
+      "price": 1,
+      "imageURL": "https://www.kitkat.com.au/sites/default/files/styles/full_width_image_1920x795_/public/2025-04/C1_EN_CUSTOM_1080x1080_STATIC_037973_R1_HERO.png?itok=CXqzbFMB",
+      "reviews": [
+        {
+          "id": "1",
+          "fullName": "Sevda Tagizade",
+          "comment": "Love the crunch!"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Nestea Lemon Iced Tea",
+      "description": "Chilled lemon-flavored iced tea.",
+      "category": "beverage",
+      "price": 2.2,
+      "imageURL": "https://www.nestleprofessional.in/sites/default/files/2021-08/Iced-Lemon-Tea.jpg",
+      "reviews": [
+        {
+          "id": "1",
+          "fullName": "Ramil Asadov",
+          "comment": "Refreshing on hot days."
+        }
+      ]
+    }
+  ]
+}

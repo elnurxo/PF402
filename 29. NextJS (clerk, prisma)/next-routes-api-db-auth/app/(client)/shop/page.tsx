@@ -1,11 +1,12 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { createProduct } from "@/app/actions/products";
-import { getProducts } from "@/services/productService";
+import { getCategories, getProducts } from "@/services/productService";
 
 // SERVER COMPONENT
 export default async function Shop() {
   const products = await getProducts();
+  const categories = await getCategories();
 
   return (
     <main className="container mx-auto py-8">
@@ -44,6 +45,21 @@ export default async function Shop() {
               className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
           </div>
+
+          <select
+            className="border border-gray-200 rounded p-2"
+            name="categories"
+            id="categories"
+          >
+            {categories &&
+              categories.map((category) => {
+                return (
+                  <option key={category.id} value={category.id}>
+                    {category.name}
+                  </option>
+                );
+              })}
+          </select>
 
           <div className="flex flex-col gap-2">
             <label htmlFor="stockQuantity" className="text-sm font-medium">
