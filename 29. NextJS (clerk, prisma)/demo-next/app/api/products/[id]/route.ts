@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   getProductById,
   updateProductById,
@@ -5,12 +6,10 @@ import {
 } from "@/services/productService";
 import { handleError } from "@/lib/error-handler";
 import { type NextRequest, NextResponse } from "next/server";
-import { Product } from "@/types/product";
 
-// Utility to safely parse id
 const parseId = (params: { id: string }) => Number(params.id);
 
-// GET - Retrieve a product by ID
+// GET product by ID
 export async function GET(
   _request: NextRequest,
   { params }: { params: { id: string } }
@@ -21,7 +20,7 @@ export async function GET(
 
     if (!product) {
       return NextResponse.json(
-        { message: "Product not found", data: null },
+        { message: "Product not found" },
         { status: 404 }
       );
     }
@@ -35,7 +34,7 @@ export async function GET(
   }
 }
 
-// DELETE - Remove a product by ID
+// DELETE product by ID
 export async function DELETE(
   _request: NextRequest,
   { params }: { params: { id: string } }
@@ -44,17 +43,13 @@ export async function DELETE(
     const id = parseId(params);
     const result = await deleteProductById(id);
 
-    if (!result.data) {
-      return NextResponse.json(result, { status: 404 });
-    }
-
     return NextResponse.json(result, { status: 200 });
   } catch (error) {
     return handleError(error);
   }
 }
 
-// PATCH - Update a product by ID (partial update)
+// PATCH product by ID (partial update)
 export async function PATCH(
   request: NextRequest,
   { params }: { params: { id: string } }
@@ -63,14 +58,15 @@ export async function PATCH(
     const body = await request.json();
     const id = parseId(params);
 
-    const updateData: Partial<Product> = {};
-    const { name, price, inStock, stockQuantity } = body;
+    const updateData: any = {};
+    const { name, price, inStock, stockQuantity, categoryId } = body;
 
     if (typeof name === "string") updateData.name = name.trim();
     if (typeof price === "number") updateData.price = price;
     if (typeof inStock === "boolean") updateData.inStock = inStock;
     if (typeof stockQuantity === "number")
       updateData.stockQuantity = stockQuantity;
+    if (typeof categoryId === "number") updateData.categoryId = categoryId;
 
     if (Object.keys(updateData).length === 0) {
       return NextResponse.json(
@@ -79,11 +75,15 @@ export async function PATCH(
       );
     }
 
-    const result = await updateProductById(id, updateData);
-
-    if (!result.data) {
-      return NextResponse.json(result, { status: 404 });
+    const existingProduct = await getProductById(id);
+    if (!existingProduct) {
+      return NextResponse.json(
+        { message: "Product not found" },
+        { status: 404 }
+      );
     }
+
+    const result = await updateProductById(id, updateData);
 
     return NextResponse.json(result, { status: 200 });
   } catch (error) {
@@ -91,18 +91,17 @@ export async function PATCH(
   }
 }
 
-// PUT - Replace a product by ID (full update)
+// PUT product by ID (full replacement)
 export async function PUT(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
   try {
-    const body = await request.json();
     const id = parseId(params);
+    const body = await request.json();
 
-    const { name, price, inStock, stockQuantity } = body;
+    const { name, price, inStock, stockQuantity, categoryId } = body;
 
-    // Validate presence of all required fields
     if (
       typeof name !== "string" ||
       typeof price !== "number" ||
@@ -118,20 +117,20 @@ export async function PUT(
     const existingProduct = await getProductById(id);
     if (!existingProduct) {
       return NextResponse.json(
-        { message: "Product not found", data: null },
+        { message: "Product not found" },
         { status: 404 }
       );
     }
 
-    const updatedProduct: Partial<Product> = {
-      id,
+    const updateData = {
       name: name.trim(),
       price,
       inStock,
       stockQuantity,
+      ...(typeof categoryId === "number" ? { categoryId } : {}),
     };
 
-    const result = await updateProductById(id, updatedProduct);
+    const result = await updateProductById(id, updateData);
 
     return NextResponse.json(result, { status: 200 });
   } catch (error) {

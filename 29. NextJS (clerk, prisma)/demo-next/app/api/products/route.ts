@@ -1,14 +1,7 @@
-import { getProducts, postProduct } from "@/services/productService";
+import { getProducts, createProductByData } from "@/services/productService";
 import { handleError } from "@/lib/error-handler";
 import { type NextRequest, NextResponse } from "next/server";
 import ProductValidationSchema from "@/app/validations/product.validation";
-
-interface CreateProductRequest {
-  name: string;
-  price: number;
-  inStock: boolean;
-  stockQuantity: number;
-}
 
 // GET - List all products or filter by name
 export async function GET(request: NextRequest) {
@@ -31,20 +24,33 @@ export async function GET(request: NextRequest) {
 // POST - Create a new product
 export async function POST(request: NextRequest) {
   try {
-    const body = (await request.json()) as CreateProductRequest;
+    const body = await request.json();
 
-    //validation
     const { success, error } = ProductValidationSchema.safeParse(body);
-    const errorMessage = error?.issues[0];
-
-    if (success) {
-      //validated
-      const result = await postProduct(body);
-      return NextResponse.json(result, { status: 201 });
-    } else {
-      //not validated
-      return NextResponse.json(errorMessage, { status: 403 });
+    if (!success) {
+      return NextResponse.json(error.issues[0], { status: 400 });
     }
+
+    const categoryId = body.categories?.[0]; // Assuming first category for now
+    if (!categoryId) {
+      return NextResponse.json(
+        { message: "At least one category must be provided." },
+        { status: 400 }
+      );
+    }
+
+    await createProductByData({
+      name: body.name,
+      price: body.price,
+      inStock: body.inStock,
+      stockQuantity: body.stockQuantity,
+      categoryId,
+    });
+
+    return NextResponse.json(
+      { message: "Product created successfully" },
+      { status: 201 }
+    );
   } catch (error) {
     return handleError(error);
   }

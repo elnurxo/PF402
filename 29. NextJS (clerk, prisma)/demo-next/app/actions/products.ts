@@ -1,32 +1,26 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use server";
-
-import {
-  postProduct,
-  updateProductById,
-  deleteProductById,
-} from "@/services/productService";
+import { createProductByData, updateProductById } from "@/services/productService";
 import { revalidatePath } from "next/cache";
-import { Product } from "@/types/product";
 
-// CREATE - Create a new product
 export async function createProduct(formData: FormData): Promise<void> {
   try {
-    const name = (formData.get("name") as string)?.trim();
+    const name = formData.get("name") as string;
     const price = Number(formData.get("price"));
     const inStock = formData.get("inStock") === "on";
     const stockQuantity = Number(formData.get("stockQuantity"));
-    const categories = formData.get("categories");
+    const categoryId = Number(formData.get("category"));
 
-    if (!name || isNaN(price) || isNaN(stockQuantity)) {
+    if (!name || isNaN(price) || isNaN(stockQuantity) || isNaN(categoryId)) {
       throw new Error("Invalid input data.");
     }
 
-    await postProduct({
+    await createProductByData({
       name,
       price,
       inStock,
       stockQuantity,
-      categories: [categories],
+      categoryId,
     });
 
     revalidatePath("/shop");
@@ -36,23 +30,24 @@ export async function createProduct(formData: FormData): Promise<void> {
   }
 }
 
-// UPDATE - Update an existing product
 export async function updateProduct(
   id: number,
   formData: FormData
 ): Promise<void> {
   try {
-    const updateData: Partial<Product> = {};
+    const updateData: any = {};
 
     const name = (formData.get("name") as string)?.trim();
     const price = formData.get("price");
     const inStock = formData.get("inStock");
     const stockQuantity = formData.get("stockQuantity");
+    const category = formData.get("category");
 
     if (name) updateData.name = name;
     if (price) updateData.price = Number(price);
-    if (stockQuantity) updateData.stockQuantity = Number(stockQuantity);
     if (inStock !== null) updateData.inStock = inStock === "on";
+    if (stockQuantity) updateData.stockQuantity = Number(stockQuantity);
+    if (category) updateData.categoryId = Number(category);
 
     await updateProductById(id, updateData);
 
@@ -60,17 +55,5 @@ export async function updateProduct(
   } catch (error) {
     console.error("Update Product Error:", error);
     throw new Error("Failed to update product.");
-  }
-}
-
-// DELETE - Delete a product
-export async function deleteProduct(id: number): Promise<void> {
-  try {
-    await deleteProductById(id);
-
-    revalidatePath("/shop");
-  } catch (error) {
-    console.error("Delete Product Error:", error);
-    throw new Error("Failed to delete product.");
   }
 }

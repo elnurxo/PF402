@@ -13,23 +13,25 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+//ONE-TO-MANY
+
 // model schema
 model Product {
-  id            Int          @id @unique @default(autoincrement())
+  id            Int        @id @unique @default(autoincrement())
   name          String
   price         Float
-  inStock       Boolean      @default(true)
+  inStock       Boolean    @default(true)
   stockQuantity Int
-  categories    Categories[] @relation("ProductCategories")
-  createdAt     DateTime     @default(now())
-  updatedAt     DateTime     @updatedAt
+  category      Categories @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  categoryId    Int
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
 }
 
 model Categories {
-  id        Int      @id @unique @default(autoincrement())
-  name      String
-  productId Int?
-  product   Product? @relation("ProductCategories", fields: [productId], references: [id])
+  id       Int       @id @unique @default(autoincrement())
+  name     String
+  products Product[] // One category → many products
 }
 
 enum Role {
