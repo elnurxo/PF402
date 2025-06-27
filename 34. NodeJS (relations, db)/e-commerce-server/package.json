@@ -1,10 +1,11 @@
 {
-  "name": "server",
+  "name": "phones-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +19,9 @@
     "express": "^5.1.0",
     "express-rate-limit": "^7.5.0",
     "helmet": "^8.1.0",
-    "uuid": "^11.1.0"
+    "joi": "^17.13.3",
+    "joi-objectid": "^4.0.2",
+    "mongodb": "^6.17.0",
+    "mongoose": "^8.15.1"
   }
 }

@@ -1,0 +1,15 @@
+filter, sort - mongodb +
+pagination - mongodb +
+serving static files +
+file upload - Multer (local), cloud (cloudinary, aws s3) [deleting, resizing with sharp, validate type-size] +
+Auth - bcrypt, jwt (access + refresh token), 
+auth middleware (protected routes),
+refresh token implementation (cookie vs. local-storage),
+RBAC, email verification with node-mailer, reset password
+google auth (oauth, passport.js)
+payment with stripe
+testing (postman, unit test with jest/mocha, api testing superset)
+logging - winston, morgan
+caching with Redis
+Background jobs with BullMQ / Agenda (email queue, cleanup tasks)
+Intro to WebSockets and polling, socket.io
