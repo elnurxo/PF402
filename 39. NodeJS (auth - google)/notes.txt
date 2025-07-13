@@ -1,0 +1,29 @@
+filter, sort - mongodb +
+pagination - mongodb +
+serving static files +
+file upload - Multer (local), cloud (cloudinary, aws s3) [deleting, resizing with sharp, validate type-size] +
+Auth - bcrypt, jwt (access + refresh token), 
+auth middleware (protected routes),
+refresh token implementation (cookie vs. local-storage),
+RBAC, email verification with node-mailer, reset password
+google auth (oauth, passport.js)
+payment with stripe
+testing (postman, unit test with jest/mocha, api testing superset)
+logging - winston, morgan
+caching with Redis
+Background jobs with BullMQ / Agenda (email queue, cleanup tasks)
+Intro to WebSockets and polling, socket.io
+
+
+--------------------------------------------------
+.env - server url (replace deploy)
+// verify email (controller, service, route)
+// verify email (JWT token handling)
+// JOI validation for all the routes
+// JWT token auth middleware for protected routes
+
+
+
+FRONT (REDUX USER STATE - ADMIN VENDOR CUSTOMER)
+GOOGLE LOGIN REGISTER
+REFRESH TOKEN 15 MINS (SET LOCAL)
